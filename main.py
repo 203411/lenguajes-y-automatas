@@ -10,8 +10,7 @@ def read_file_xlsx(filename):
          data.append([row[0], row[1], row[2], row[3], row[4]])
       return data   
    except Exception as e:
-      # print(f"El archivo '{filename}' no existe.") 
-      print(e)  
+      print(f"El archivo '{filename}' no existe.") 
    
 def read_file_txt(filename):
    try:
@@ -24,8 +23,7 @@ def read_file_txt(filename):
       DFA = ast.literal_eval(content)
       return DFA
    except Exception as e:
-      # print(f"El archivo '{filename}' no existe.") 
-      print(e)  
+      print(f"El archivo '{filename}' no existe.") 
 
 def step_dfa(D,q,a):
    try:
@@ -37,7 +35,6 @@ def step_dfa(D,q,a):
 
 def run_dfa(D,w):
    curstate = D["q0"]
-
    if w == "":
       return curstate
    else:
@@ -58,9 +55,8 @@ def search(mac, database):
          return (f"Encontrado -> Matricula: {database[i][0]} Nombre: {database[i][1]} Consumo: {database[i][4]}")
    return "MAC no encontrada en la base de datos"
    
-
 if __name__ == "__main__":   
-   D = read_file_txt('input.txt') 
+   D = read_file_txt('automata.txt') 
    testing_macs = read_file_txt('test.txt') 
    database = read_file_xlsx('archivo.xlsx')
    i = 1
