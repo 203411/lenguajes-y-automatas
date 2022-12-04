@@ -38,7 +38,7 @@ class main:
          assert(a in D["Sigma"])
          assert(q in D["Q"])
          return D["Delta"][(q,a)]
-      except:
+      except Exception as e:
          return False
 
    def run_dfa(self,D,w):
